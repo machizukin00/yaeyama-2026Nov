@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<style>html{color-scheme:light}:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>11月八重山旅のしおり</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@500;700;900&family=Noto+Sans+JP:wght@400;500;700&family=Outfit:wght@500;700&display=swap">
+<style>
+  /* layout: phone-first travel guide; hero sky-to-lagoon band, sticky day chips, one card per day with a dotted timeline */
+  :root{
+    --sea:#0D4A5A;
+    --lagoon:#1E9AA0;
+    --shallow:#BFE7E4;
+    --coral:#E2725B;
+    --cane:#5E9A4B;
+    --sun:#F4B860;
+    --ground:#F3F6F4;
+    --card:#FFFFFF;
+    --ink:#1D2A2F;
+    --muted:#5F6F74;
+    --line:#DCE6E4;
+    --chip:#E6F3F2;
+    --chipink:#0D4A5A;
+    --font-display:"Zen Maru Gothic","Hiragino Maru Gothic ProN","Noto Sans JP",sans-serif;
+    --font-body:"Noto Sans JP","Hiragino Sans","Yu Gothic",sans-serif;
+    --font-num:"Outfit","Noto Sans JP",sans-serif;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --sea:#0A3540; --lagoon:#45C1C4; --shallow:#1F4A4F; --coral:#F08A73; --cane:#86BE72; --sun:#F4C27A;
+      --ground:#0F1A1D; --card:#172427; --ink:#E6EEEC; --muted:#9DB0B3; --line:#26383C; --chip:#1D3337; --chipink:#E6EEEC;
+      color-scheme:dark;
+    }
+  }
+  :root[data-theme="dark"]{
+      --sea:#0A3540; --lagoon:#45C1C4; --shallow:#1F4A4F; --coral:#F08A73; --cane:#86BE72; --sun:#F4C27A;
+      --ground:#0F1A1D; --card:#172427; --ink:#E6EEEC; --muted:#9DB0B3; --line:#26383C; --chip:#1D3337; --chipink:#E6EEEC;
+      color-scheme:dark;
+  }
+
+  *{box-sizing:border-box}
+  body{background:var(--ground);color:var(--ink);font-family:var(--font-body);font-size:15px;line-height:1.75;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:640px;margin:0 auto;padding-left:max(16px, env(safe-area-inset-left, 0px));padding-right:max(16px, env(safe-area-inset-right, 0px))}
+
+  /* ---------- hero ---------- */
+  .hero{position:relative;overflow:hidden;color:#fff;
+    background:linear-gradient(180deg,#F6C98A 0%,#E99A7A 22%,#5FA9B8 48%,#1E8C96 70%,#0D4A5A 100%)}
+  .hero .wrap{position:relative;padding-block:44px 92px;z-index:2}
+  .sun{position:absolute;right:-28px;top:34px;width:150px;height:150px;border-radius:50%;
+    background:radial-gradient(circle,#FFF4D6 0%,#FFD98F 55%,rgba(255,217,143,0) 72%);z-index:1}
+  .eyebrow{font-family:var(--font-num);font-weight:700;letter-spacing:.22em;font-size:12px;opacity:.95}
+  .hero h1{font-family:var(--font-display);font-weight:900;font-size:clamp(36px,11vw,52px);line-height:1.15;margin:10px 0 8px;text-wrap:balance;text-shadow:0 2px 14px rgba(13,74,90,.35)}
+  .hero .sub{font-weight:500;font-size:15px;margin:0}
+  .count{display:inline-flex;align-items:baseline;gap:6px;margin-top:20px;padding:8px 16px;border-radius:999px;
+    background:rgba(255,255,255,.18);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.35);font-size:13px}
+  .count b{font-family:var(--font-num);font-size:24px;line-height:1}
+  .waves{position:absolute;left:0;right:0;bottom:-1px;width:100%;height:70px;z-index:2;display:block}
+
+  /* ---------- day chips ---------- */
+  .chips{position:sticky;top:env(safe-area-inset-top, 0px);z-index:20;background:var(--ground);border-bottom:1px solid var(--line)}
+  .chips .wrap{display:flex;gap:8px;overflow-x:auto;padding-block:10px;scrollbar-width:none}
+  .chips .wrap::-webkit-scrollbar{display:none}
+  .chips a{flex:0 0 auto;text-decoration:none;font-family:var(--font-num);font-weight:700;font-size:13px;
+    padding:6px 12px;border-radius:999px;background:var(--chip);color:var(--chipink)}
+  .chips a span{font-family:var(--font-body);font-weight:500;margin-left:4px}
+
+  section{padding-block:28px 8px}
+  .sec-title{font-family:var(--font-display);font-weight:900;font-size:22px;margin:0 0 4px;color:var(--ink)}
+  .sec-lead{color:var(--muted);margin:0 0 16px;font-size:14px}
+
+  /* ---------- overview strip ---------- */
+  .strip{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}
+  .strip a{text-decoration:none;background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 6px 12px;text-align:center;min-width:0}
+  .strip .d{font-family:var(--font-num);font-weight:700;font-size:12px;color:var(--lagoon)}
+  .strip .w{font-size:11px;color:var(--muted)}
+  .strip .p{display:block;font-family:var(--font-display);font-weight:700;font-size:13px;line-height:1.3;margin-top:4px}
+  .strip .dot{display:block;width:26px;height:26px;margin:6px auto 0;border-radius:50%}
+
+  /* ---------- day card ---------- */
+  .day{background:var(--card);border-radius:22px;overflow:hidden;border:1px solid var(--line);margin-bottom:18px;scroll-margin-top:64px}
+  .day-head{position:relative;padding:18px 18px 16px;color:#fff;background:var(--c)}
+  .day-head .num{font-family:var(--font-num);font-weight:700;font-size:12px;letter-spacing:.18em;opacity:.9}
+  .day-head h3{font-family:var(--font-display);font-weight:900;font-size:22px;line-height:1.3;margin:2px 0 0;text-wrap:balance}
+  .day-head .date{font-size:13px;opacity:.95;margin-top:2px}
+  .day-head svg.deco{position:absolute;right:14px;top:14px;width:46px;height:46px;opacity:.9}
+  .day-lead{margin:0;padding:14px 18px 4px;color:var(--muted);font-size:14px}
+  .tl{list-style:none;margin:0;padding:8px 18px 18px}
+  .tl li{position:relative;padding:10px 0 10px 26px}
+  .tl li::before{content:"";position:absolute;left:5px;top:0;bottom:0;width:2px;background:var(--line)}
+  .tl li:first-child::before{top:18px}
+  .tl li:last-child::before{bottom:calc(100% - 18px)}
+  .tl li::after{content:"";position:absolute;left:0;top:14px;width:12px;height:12px;border-radius:50%;background:var(--card);border:3px solid var(--c)}
+  .tl .t{font-family:var(--font-num);font-weight:700;font-size:13px;color:var(--c)}
+  .tl .what{font-weight:700;font-size:15px;line-height:1.5}
+  .tl .note{font-size:13px;color:var(--muted);margin-top:2px}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+  .tag{font-size:11px;font-weight:700;padding:2px 9px;border-radius:999px;line-height:1.7}
+  .tag.ok{background:color-mix(in srgb,var(--cane) 16%,transparent);color:var(--cane)}
+  .tag.todo{background:color-mix(in srgb,var(--coral) 16%,transparent);color:var(--coral)}
+  .tag.free{background:var(--chip);color:var(--muted)}
+  .map{font-size:12px;font-weight:700;color:var(--lagoon);text-decoration:none;border-bottom:1px dotted currentColor}
+  .alt{margin-top:8px;padding:8px 10px;border-radius:10px;background:var(--chip);font-size:12px;line-height:1.65;color:var(--ink)}
+  .alt b{color:var(--c);font-weight:700}
+  .ferry{font-family:var(--font-num);font-weight:700}
+  .tip{margin:0 18px 18px;padding:12px 14px;border-radius:14px;background:var(--chip);font-size:13px;color:var(--ink)}
+  .tip b{color:var(--c)}
+
+  /* ---------- reservations ---------- */
+  .resv{display:grid;gap:10px}
+  .r{display:grid;grid-template-columns:44px minmax(0,1fr);gap:12px;align-items:center;background:var(--card);border:1px solid var(--line);border-radius:16px;padding:12px 14px}
+  .r .ic{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:var(--chip);color:var(--lagoon)}
+  .r .ic svg{width:24px;height:24px}
+  .r .when{font-family:var(--font-num);font-weight:700;font-size:12px;color:var(--lagoon)}
+  .r .name{font-weight:700;line-height:1.45}
+  .r .memo{font-size:12px;color:var(--muted)}
+
+  /* ---------- todo ---------- */
+  .todo-list{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+  .todo-list li{display:flex;gap:12px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-left:4px solid var(--coral);border-radius:14px;padding:12px 14px}
+  .todo-list .box{flex:0 0 auto;width:18px;height:18px;border-radius:5px;border:2px solid var(--coral);margin-top:4px}
+  .todo-list b{display:block}
+  .todo-list span{font-size:13px;color:var(--muted)}
+
+  footer{padding-block:24px 40px;color:var(--muted);font-size:12px;text-align:center}
+
+  svg{display:block}
+  :focus-visible{outline:2px solid var(--lagoon);outline-offset:2px;border-radius:6px}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-plane" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M3 13l7-1 4-8h2l-2 8 6 1 2-2h1l-1 4 1 4h-1l-2-2-6 1 2 8h-2l-4-8-7-1z"/></symbol>
+  <symbol id="i-car" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M4 16v-4l2-5h12l2 5v4zM4 16v2h3v-2M17 16v2h3v-2M7 12h10"/><circle cx="8" cy="14" r="1" fill="currentColor"/><circle cx="16" cy="14" r="1" fill="currentColor"/></symbol>
+  <symbol id="i-bed" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M3 18V7M3 14h18v4M21 14v-2a3 3 0 0 0-3-3h-7v5"/><circle cx="7" cy="11" r="2" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-food" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M7 3v8M5 3v5a2 2 0 0 0 4 0V3M7 11v10M17 3c-2 2-3 4-3 7h3v11"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 48 48"><circle cx="24" cy="24" r="9" fill="currentColor"/><g stroke="currentColor" stroke-width="3" stroke-linecap="round"><path d="M24 4v6M24 38v6M4 24h6M38 24h6M10 10l4 4M34 34l4 4M38 10l-4 4M14 34l-4 4"/></g></symbol>
+  <symbol id="i-mount" viewBox="0 0 48 48"><path fill="currentColor" d="M4 40l14-22 7 10 5-6 14 18z"/><circle cx="36" cy="12" r="4" fill="currentColor"/></symbol>
+  <symbol id="i-fish" viewBox="0 0 48 48"><path fill="currentColor" d="M6 24c8-10 22-12 30-2l6-6v16l-6-6c-8 10-22 8-30-2z"/><circle cx="16" cy="22" r="2" fill="#fff"/></symbol>
+  <symbol id="i-bike" viewBox="0 0 48 48"><g fill="none" stroke="currentColor" stroke-width="3" stroke-linejoin="round"><circle cx="12" cy="32" r="8"/><circle cx="36" cy="32" r="8"/><path d="M12 32l8-14h12l4 14M20 18l6 14h-6M28 12h6"/></g></symbol>
+  <symbol id="i-bag" viewBox="0 0 48 48"><path fill="currentColor" d="M10 16h28l-2 26H12zM18 16a6 6 0 0 1 12 0h-3a3 3 0 0 0-6 0z"/></symbol>
+</svg>
+
+<header class="hero">
+  <div class="sun" aria-hidden="true"></div>
+  <div class="wrap">
+    <div class="eyebrow">YAEYAMA ISLANDS · 2026.11.21 – 11.25</div>
+    <h1>八重山の旅<br>しおり</h1>
+    <p class="sub">石垣島に2泊、小浜島に2泊。ふたりの4泊5日。</p>
+    <div class="count" id="count"><span>出発まで</span><b id="days">–</b><span>日</span></div>
+  </div>
+  <svg class="waves" viewBox="0 0 400 70" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 30 C60 10 120 50 200 30 S340 10 400 30 V70 H0Z" fill="var(--shallow)" opacity=".55"/>
+    <path d="M0 46 C70 28 130 62 210 44 S350 30 400 46 V70 H0Z" fill="var(--ground)"/>
+  </svg>
+</header>
+
+<nav class="chips" aria-label="日付へ移動">
+  <div class="wrap">
+    <a href="#day1">DAY1<span>土</span></a>
+    <a href="#day2">DAY2<span>日</span></a>
+    <a href="#day3">DAY3<span>月</span></a>
+    <a href="#day4">DAY4<span>火</span></a>
+    <a href="#day5">DAY5<span>水</span></a>
+    <a href="#resv">予約一覧</a>
+    <a href="#todo">やること</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <section>
+    <h2 class="sec-title">旅のあらまし</h2>
+    <p class="sec-lead">タップするとその日の予定へ。</p>
+    <div class="strip">
+      <a href="#day1"><span class="d">11/21</span> <span class="w">土</span><span class="dot" style="background:#E99A5B"></span><span class="p">到着と夕日</span></a>
+      <a href="#day2"><span class="d">11/22</span> <span class="w">日</span><span class="dot" style="background:#5E9A4B"></span><span class="p">白保と北へ</span></a>
+      <a href="#day3"><span class="d">11/23</span> <span class="w">月</span><span class="dot" style="background:#1E9AA0"></span><span class="p">海と船の日</span></a>
+      <a href="#day4"><span class="d">11/24</span> <span class="w">火</span><span class="dot" style="background:#C9A227"></span><span class="p">自転車で一周</span></a>
+      <a href="#day5"><span class="d">11/25</span> <span class="w">水</span><span class="dot" style="background:#0D4A5A"></span><span class="p">街歩きして帰る</span></a>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="sec-title">日ごとの予定</h2>
+    <p class="sec-lead">時刻は目安です。お店の場所は「地図」から開けます。</p>
+
+    <!-- DAY 1 -->
+    <article class="day" id="day1" style="--c:#E07B4F">
+      <div class="day-head">
+        <svg class="deco" aria-hidden="true"><use href="#i-sun"/></svg>
+        <div class="num">DAY 1</div>
+        <h3>到着と夕日</h3>
+        <div class="date">11月21日（土）　石垣島</div>
+      </div>
+      <p class="day-lead">お昼すぎに石垣へ。初日は無理をせず、夕日とジェラート、夜は三線を聴きながら島の料理を。</p>
+      <ul class="tl">
+        <li><div class="t">14:00</div><div class="what">石垣空港に到着</div><div class="note">名古屋（中部）11:00発のANA直行便</div></li>
+        <li><div class="t">14:30</div><div class="what">レンタカーを借りる</div><div class="note">バジェットレンタカー 石垣空港店。空港のレンタカーバス乗り場から</div><div class="tags"><span class="tag ok">予約済み</span></div></li>
+        <li><div class="t">15:30ごろ</div><div class="what">グランヴィリオリゾート石垣島にチェックイン</div><div class="note">ヴィラガーデン。専用プールと大浴場あり</div><div class="tags"><span class="tag ok">予約済み</span></div></li>
+        <li><div class="t">17:00ごろ</div><div class="what">ミルミル本舗で夕日とジェラート</div><div class="note">名蔵湾を見下ろす高台。日没は17:50ごろ、営業は夕日が沈むまで</div><div class="tags"><span class="tag free">予約不要</span><a class="map" href="https://www.google.com/maps/search/?api=1&query=%E3%83%9F%E3%83%AB%E3%83%9F%E3%83%AB%E6%9C%AC%E8%88%97%20%E7%9F%B3%E5%9E%A3" target="_blank" rel="noopener">地図</a></div></li>
+        <li><div class="t">18:30</div><div class="what">舟蔵の里で夜ごはん</div><div class="note">赤瓦の古民家で八重山の郷土料理。夜は18:30から唄三線と踊り（日によって休み）。ホテルと同じ新川エリア</div><div class="tags"><span class="tag todo">要予約</span><a class="map" href="https://www.google.com/maps/search/?api=1&query=%E8%88%9F%E8%94%B5%E3%81%AE%E9%87%8C%20%E7%9F%B3%E5%9E%A3" target="_blank" rel="noopener">地図</a></div></li>
+      </ul>
+    </article>
+
+    <!-- DAY 2 -->
+    <article class="day" id="day2" style="--c:#4F8F3E">
+      <div class="day-head">
+        <svg class="deco" aria-hidden="true"><use href="#i-mount"/></svg>
+        <div class="num">DAY 2</div>
+        <h3>白保の朝と、北へドライブ</h3>
+        <div class="date">11月22日（日）　石垣島</div>
+      </div>
+      <p class="day-lead">海辺の一軒家で朝ごはん、日曜だけの市をのぞいたら、島の北へ。夜は石垣牛の焼肉。</p>
+      <ul class="tl">
+        <li><div class="t">9:30</div><div class="what">旬家ばんちゃんで朝ごはん</div><div class="note">白保の海沿いの一軒家。名物はふわふわのだし巻き卵</div><div class="tags"><span class="tag ok">予約済み</span><a class="map" href="https://www.google.com/maps/search/?api=1&query=%E6%97%AC%E5%AE%B6%E3%81%B0%E3%82%93%E3%81%A1%E3%82%83%E3%82%93%20%E7%9F%B3%E5%9E%A3" target="_blank" rel="noopener">地図</a></div></li>
+        <li><div class="t">10:45ごろ</div><div class="what">白保日曜市</div><div class="note">日曜だけ、10:00〜13:00。島の食材のお弁当や雑貨。ばんちゃんから歩ける距離</div><div class="tags"><span class="tag free">予約不要</span><a class="map" href="https://www.google.com/maps/search/?api=1&query=%E3%81%97%E3%82%89%E3%81%BB%E3%82%B5%E3%83%B3%E3%82%B4%E6%9D%91" target="_blank" rel="noopener">地図</a></div></li>
+        <li><div class="t">12:15</div><div class="what">ばんやファーム</div><div class="note">海が見える高台のパン屋さん。日曜は焼きたてパンの日。不定休なのでInstagramで確認</div><div class="tags"><span class="tag free">予約不要</span><a class="map" href="https://www.google.com/maps/search/?api=1&query=%E3%81%B0%E3%82%93%E3%82%84%E3%83%95%E3%82%A1%E3%83%BC%E3%83%A0%20%E7%9F%B3%E5%9E%A3" target="_blank" rel="noopener">地図</a></div></li>
+        <li><div class="t">13:30</div><div class="what">野底マーペーに登る</div><div class="note">8合目から山頂まで片道20〜30分。360度の眺め。足元は獣道なのでスニーカーで</div><div class="tags"><span class="tag free">予約不要</span><a class="map" href="https://www.google.com/maps/search/?api=1&query=%E9%87%8E%E5%BA%95%E3%83%9E%E3%83%BC%E3%83%9A%E3%83%BC" target="_blank" rel="noopener">地図</a></div></li>
+        <li><div class="t">14:45</div><div class="what">平久保崎（時間があれば）</div><div class="note">島の最北端の灯台。押していたら省略して戻る</div><div class="tags"><a class="map" href="https://www.google.com/maps/search/?api=1&query=%E5%B9%B3%E4%B9%85%E4%BF%9D%E5%B4%8E%E7%81%AF%E5%8F%B0" target="_blank" rel="noopener">地図</a></div></li>
+        <li><div class="t">17:00</div><div class="what">牛信で石垣牛の焼肉</div><div class="note">市街地。北部から戻るのに約1時間かかるので、16時前には南へ</div><div class="tags"><span class="tag ok">予約済み</span><a class="map" href="https://www.google.com/maps/search/?api=1&query=%E7%84%BC%E8%82%89%20%E7%89%9B%E4%BF%A1%20%E7%9F%B3%E5%9E%A3" target="_blank" rel="noopener">地図</a></div></li>
+      </ul>
+    </article>
+
+    <!-- DAY 3 -->
+    <article class="day" id="day3" style="--c:#16898F">
+      <div class="day-head">
+        <svg class="deco" aria-hidden="true"><use href="#i-fish"/></svg>
+        <div class="num">DAY 3</div>
+        <h3>海の日、そして小浜島へ</h3>
+        <div class="date">11月23日（月）　石垣島 → 小浜島</div>
+      </div>
+      <p class="day-lead">朝はゆし豆腐。マンタとウミガメを探しに海へ出て、夕方の船で小浜島へ渡ります。</p>
+      <ul class="tl">
+        <li><div class="t">6:30〜</div><div class="what">とうふの比嘉でゆし豆腐</div><div class="note">予約不可・現金のみ・売り切れ次第終了。早めに</div><div class="tags"><span class="tag free">予約不要</span><a class="map" href="https://www.google.com/maps/search/?api=1&query=%E3%81%A8%E3%81%86%E3%81%B5%E3%81%AE%E6%AF%94%E5%98%89" target="_blank" rel="noopener">地図</a></div></li>
+        <li><div class="t">朝</div><div class="what">ホテルをチェックアウト</div><div class="note">スーツケースは車に積んでおく</div></li>
+        <li><div class="t">午前</div><div class="what">シュノーケル</div><div class="note">マンタとウミガメ狙い。幻の島に寄らない、12時ごろまでに終わるプランで</div><div class="tags"><span class="tag todo">まだ予約していない</span></div></li>
+        <li><div class="t">14:00ごろ</div><div class="what">給油してレンタカーを返す</div><div class="note">バジェット石垣空港店。返却期限は14:30。手続きと空港までの送迎で20〜30分みておく</div><div class="tags"><span class="tag ok">予約済み</span></div></li>
+        <li><div class="t">14:35</div><div class="what">空港から離島ターミナルへバス</div><div class="note">カリー観光の直通バス。15:05ごろ着</div>
+          <div class="alt"><b>15:05発</b>のバスでも16:00の船に間に合います（15:35ごろ着）。</div></li>
+        <li><div class="t">15:10</div><div class="what">翌朝の朝ごはんを買う</div><div class="note">離島ターミナルの売店や周辺のお店で</div></li>
+        <li><div class="t">16:00</div><div class="what">八重山観光フェリーで小浜島へ</div><div class="note">石垣港 16:00発 → 小浜港 16:30ごろ着。乗船券は時間指定なしで、どの便にも乗れる</div>
+          <div class="alt"><b>17:00便</b>でも大丈夫です（バスは15:35か16:05発）。小浜島着は17:30ごろで、ちょうど夕暮れどき。<br>シュノーケルが早く終われば<b>14:00便</b>も（13:05発のバスに乗れる時間に車を返す）。</div></li>
+        <li><div class="t">16:45ごろ</div><div class="what">リゾナーレ小浜島にチェックイン</div><div class="note">港から無料送迎バスで約5分。送迎の時間は事前にホテルへ確認を</div><div class="tags"><span class="tag ok">予約済み</span></div></li>
+      </ul>
+    </article>
+
+    <!-- DAY 4 -->
+    <article class="day" id="day4" style="--c:#B58E1C">
+      <div class="day-head">
+        <svg class="deco" aria-hidden="true"><use href="#i-bike"/></svg>
+        <div class="num">DAY 4</div>
+        <h3>自転車で小浜島めぐり</h3>
+        <div class="date">11月24日（火）　小浜島</div>
+      </div>
+      <p class="day-lead">泳がずに、自転車で島をのんびり一周する日。サトウキビ畑の一本道や展望台に寄り道しながら。</p>
+      <ul class="tl">
+        <li><div class="t">朝</div><div class="what">前日に買った朝ごはん</div></li>
+        <li><div class="t">午前</div><div class="what">ホテルで自転車を借りる</div><div class="note">島のまわりはおよそ16km。真ん中は坂があるので、選べるなら電動アシスト付きが楽</div></li>
+        <li><div class="t">寄り道</div><div class="what">シュガーロード</div><div class="note">サトウキビ畑の間をまっすぐ延びる一本道</div><div class="tags"><a class="map" href="https://www.google.com/maps/search/?api=1&query=%E3%82%B7%E3%83%A5%E3%82%AC%E3%83%BC%E3%83%AD%E3%83%BC%E3%83%89%20%E5%B0%8F%E6%B5%9C%E5%B3%B6" target="_blank" rel="noopener">地図</a></div></li>
+        <li><div class="t">寄り道</div><div class="what">大岳（うふだき）展望台</div><div class="note">島の真ん中の丘。まわりの島々を見渡せる</div><div class="tags"><a class="map" href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E5%B2%B3%E5%B1%95%E6%9C%9B%E5%8F%B0%20%E5%B0%8F%E6%B5%9C%E5%B3%B6" target="_blank" rel="noopener">地図</a></div></li>
+        <li><div class="t">寄り道</div><div class="what">細崎（くばざき）</div><div class="note">島の西の端の小さな漁港</div><div class="tags"><a class="map" href="https://www.google.com/maps/search/?api=1&query=%E7%B4%B0%E5%B4%8E%20%E5%B0%8F%E6%B5%9C%E5%B3%B6" target="_blank" rel="noopener">地図</a></div></li>
+        <li><div class="t">夕方</div><div class="what">リゾナーレでのんびり</div></li>
+      </ul>
+    </article>
+
+    <!-- DAY 5 -->
+    <article class="day" id="day5" style="--c:#0D4A5A">
+      <div class="day-head">
+        <svg class="deco" aria-hidden="true"><use href="#i-bag"/></svg>
+        <div class="num">DAY 5</div>
+        <h3>石垣の街を歩いて帰る</h3>
+        <div class="date">11月25日（水）　小浜島 → 石垣島 → 名古屋</div>
+      </div>
+      <p class="day-lead">朝の船で石垣へ。市場とブランチ、竹富町の新しいショップに寄って、バスで空港へ。</p>
+      <ul class="tl">
+        <li><div class="t">9:15ごろ</div><div class="what">チェックアウト、送迎バスで小浜港へ</div><div class="note">送迎の時刻はフロントで確認</div></li>
+        <li><div class="t">9:40</div><div class="what">八重山観光フェリーで石垣港へ</div><div class="note">小浜港 9:40発 → 石垣港 10:10ごろ着</div>
+          <div class="alt"><b>8:10便</b>ならもっとゆっくり街歩き（8:40ごろ着、市場は9時開店）。<br><b>10:55便</b>でも間に合います（11:25ごろ着）。この場合は市場を短めにして、少し慌ただしくなります。</div></li>
+        <li><div class="t">10:15</div><div class="what">コインロッカーにスーツケース</div><div class="note">離島ターミナル内。大型は500円</div></li>
+        <li><div class="t">10:25</div><div class="what">ゆらてぃく市場でお土産</div><div class="note">JAの直売所、9:00〜18:00。ターミナルから歩いて10分。発送もできる</div><div class="tags"><a class="map" href="https://www.google.com/maps/search/?api=1&query=%E3%82%86%E3%82%89%E3%81%A6%E3%81%83%E3%81%8F%E5%B8%82%E5%A0%B4" target="_blank" rel="noopener">地図</a></div></li>
+        <li><div class="t">11:00</div><div class="what">ダグズ・バーガーでブランチ</div><div class="note">ユーグレナモール。11時開店</div><div class="tags"><span class="tag free">予約不要</span><a class="map" href="https://www.google.com/maps/search/?api=1&query=%E3%83%80%E3%82%B0%E3%82%BA%E3%83%90%E3%83%BC%E3%82%AC%E3%83%BC%20%E7%9F%B3%E5%9E%A3%E5%B3%B6" target="_blank" rel="noopener">地図</a></div></li>
+        <li><div class="t">12:15</div><div class="what">START（竹富町役場1階）に10分だけ</div><div class="note">2026年10月にオープンした、竹富町の離島の特産品を扱うショップ＆バー。離島ターミナルから歩いてすぐ</div><div class="tags"><span class="tag todo">営業時間を確認</span><a class="map" href="https://www.google.com/maps/search/?api=1&query=%E7%AB%B9%E5%AF%8C%E7%94%BA%E5%BD%B9%E5%A0%B4" target="_blank" rel="noopener">地図</a></div></li>
+        <li><div class="t">12:35</div><div class="what">ロッカーから荷物を出す</div></li>
+        <li><div class="t">13:10</div><div class="what">空港直通バスで空港へ</div><div class="note">カリー観光、離島ターミナル13:10発 → 空港13:40ごろ着。混む日は立ち客が出るので10分前には並ぶ</div>
+          <div class="alt"><b>12:40発</b>なら空港に13:10ごろ着いて、ゆとりをもって手続きできます。</div></li>
+        <li><div class="t">14:40</div><div class="what">石垣を出発</div><div class="note">17:00に名古屋（中部）着</div></li>
+      </ul>
+    </article>
+  </section>
+
+  <section id="resv" style="scroll-margin-top:64px">
+    <h2 class="sec-title">予約一覧</h2>
+    <p class="sec-lead">予約が済んでいるものです。</p>
+    <div class="resv">
+      <div class="r"><div class="ic"><svg><use href="#i-plane"/></svg></div><div><div class="when">11/21（土）11:00 → 14:00</div><div class="name">ANA 名古屋（中部）→ 石垣</div></div></div>
+      <div class="r"><div class="ic"><svg><use href="#i-car"/></svg></div><div><div class="when">11/21（土）14:30 〜 11/23（月）14:30</div><div class="name">バジェットレンタカー 石垣空港店</div><div class="memo">コンパクトカー、カーナビ・ETC付き。0980-98-0004</div></div></div>
+      <div class="r"><div class="ic"><svg><use href="#i-bed"/></svg></div><div><div class="when">11/21 〜 11/23　2泊</div><div class="name">グランヴィリオリゾート石垣島 ヴィラガーデン</div><div class="memo">素泊まり</div></div></div>
+      <div class="r"><div class="ic"><svg><use href="#i-food"/></svg></div><div><div class="when">11/22（日）9:30</div><div class="name">旬家ばんちゃん（朝ごはん）</div></div></div>
+      <div class="r"><div class="ic"><svg><use href="#i-food"/></svg></div><div><div class="when">11/22（日）17:00</div><div class="name">牛信（石垣牛の焼肉）</div></div></div>
+      <div class="r"><div class="ic"><svg><use href="#i-bed"/></svg></div><div><div class="when">11/23 〜 11/25　2泊</div><div class="name">リゾナーレ小浜島 スーペリアスイート</div><div class="memo">食事なし</div></div></div>
+      <div class="r"><div class="ic"><svg><use href="#i-plane"/></svg></div><div><div class="when">11/25（水）14:40 → 17:00</div><div class="name">ANA 石垣 → 名古屋（中部）</div></div></div>
+    </div>
+  </section>
+
+  <section id="todo" style="scroll-margin-top:64px">
+    <h2 class="sec-title">まだやること</h2>
+    <p class="sec-lead">出発までに済ませたいこと。</p>
+    <ul class="todo-list">
+      <li><div class="box" aria-hidden="true"></div><div><b>舟蔵の里を予約する</b><span>21日（土）18:30ごろ、2名</span></div></li>
+      <li><div class="box" aria-hidden="true"></div><div><b>シュノーケルツアーを予約する</b><span>23日（月）午前、幻の島なし、12時ごろまでに終わるプラン</span></div></li>
+    </ul>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">営業時間や定休日は調べた時点のものです。マンタに会えるかは当日の海と風しだい。</div>
+</footer>
+
+<script>
+  (function(){
+    try{
+      var now = new Date();
+      var jst = new Date(now.getTime() + (now.getTimezoneOffset() + 540) * 60000);
+      var today = Date.UTC(jst.getFullYear(), jst.getMonth(), jst.getDate());
+      var dep = Date.UTC(2026, 10, 21);
+      var ret = Date.UTC(2026, 10, 25);
+      var d = Math.round((dep - today) / 86400000);
+      var el = document.getElementById("count");
+      if (d > 0) { document.getElementById("days").textContent = d; }
+      else if (today <= ret) { el.innerHTML = "<span>旅の</span><b>" + (1 - d) + "</b><span>日目</span>"; }
+      else { el.innerHTML = "<span>おかえりなさい</span>"; }
+    }catch(e){}
+  })();
+</script>
+</body>
+</html>
