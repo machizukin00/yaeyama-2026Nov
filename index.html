@@ -105,6 +105,15 @@
   .map{font-size:12px;font-weight:700;color:var(--lagoon);text-decoration:none;border-bottom:1px dotted currentColor}
   .alt{margin-top:8px;padding:8px 10px;border-radius:10px;background:var(--chip);font-size:12px;line-height:1.65;color:var(--ink)}
   .alt b{color:var(--c);font-weight:700}
+  .wx{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin:10px 18px 0}
+  .wx div{background:var(--chip);border-radius:10px;padding:7px 2px;text-align:center;font-size:11px;line-height:1.5}
+  .wx .dd{font-weight:700;font-size:12px}
+  .wx .ic{font-size:20px;line-height:1.3}
+  .wx .rain{color:var(--c);font-weight:700}
+  .wx .hl{outline:2px solid var(--c)}
+  .wxnote{margin:6px 18px 0;font-size:11px;color:var(--muted)}
+  .plan{margin:12px 18px 0;padding:10px 12px;border-radius:12px;border:2px solid var(--c);font-size:13px;line-height:1.7}
+  .plan b{color:var(--c)}
   .ferry{font-family:var(--font-num);font-weight:700}
   .tip{margin:0 18px 18px;padding:12px 14px;border-radius:14px;background:var(--chip);font-size:13px;color:var(--ink)}
   .tip b{color:var(--c)}
@@ -179,8 +188,8 @@
     <div class="strip">
       <a href="#day1"><span class="d">11/21</span> <span class="w">土</span><span class="dot" style="background:#E99A5B"></span><span class="p">到着、北の山へ</span></a>
       <a href="#day2"><span class="d">11/22</span> <span class="w">日</span><span class="dot" style="background:#5E9A4B"></span><span class="p">白保とホテル</span></a>
-      <a href="#day3"><span class="d">11/23</span> <span class="w">月</span><span class="dot" style="background:#1E9AA0"></span><span class="p">海と船の日</span></a>
-      <a href="#day4"><span class="d">11/24</span> <span class="w">火</span><span class="dot" style="background:#C9A227"></span><span class="p">自転車で一周</span></a>
+      <a href="#day3"><span class="d">11/23</span> <span class="w">月</span><span class="dot" style="background:#1E9AA0"></span><span class="p">天気で決める</span></a>
+      <a href="#day4"><span class="d">11/24</span> <span class="w">火</span><span class="dot" style="background:#C9A227"></span><span class="p">自転車かのんびり</span></a>
       <a href="#day5"><span class="d">11/25</span> <span class="w">水</span><span class="dot" style="background:#0D4A5A"></span><span class="p">街歩きして帰る</span></a>
     </div>
   </section>
@@ -234,23 +243,24 @@
       <div class="day-head">
         <svg class="deco" aria-hidden="true"><use href="#i-fish"/></svg>
         <div class="num">DAY 3</div>
-        <h3>海の日、そして小浜島へ</h3>
+        <h3>天気を見て決める日</h3>
         <div class="date">11月23日（月）　石垣島 → 小浜島</div>
       </div>
-      <p class="day-lead">朝はゆし豆腐。マンタとウミガメを探しに海へ出て、夕方の船で小浜島へ渡ります。</p>
+      <p class="day-lead">24日は雨の予報。そこで23日は、24日の天気を見てから動き方を決めます。</p>
+      <div class="wx"><div><div class="dd">21（土）</div><div class="ic">🌤</div><div>22/17℃</div><div class="rain">☂ 30%</div></div><div><div class="dd">22（日）</div><div class="ic">⛅</div><div>24/18℃</div><div class="rain">☂ 30%</div></div><div><div class="dd">23（月）</div><div class="ic">☁️</div><div>26/21℃</div><div class="rain">☂ 40%</div></div><div class="hl"><div class="dd">24（火）</div><div class="ic">🌧</div><div>23/20℃</div><div class="rain">☂ 60%</div></div><div><div class="dd">25（水）</div><div class="ic">☁️</div><div>23/19℃</div><div class="rain">☂ 40%</div></div></div>
+      <div class="wxnote">11月19日時点の石垣市の予報（最高/最低気温、降水確率）。<a href="https://www.google.com/search?q=%E7%9F%B3%E5%9E%A3%E5%B8%82%202%E9%80%B1%E9%96%93%20%E5%A4%A9%E6%B0%97" target="_blank" rel="noopener">最新の天気を見る</a></div>
+      <div class="plan"><b>決めるタイミング：</b>22日の夜（または23日の朝）に24日の予報を見て、下のAかBを選ぶ。</div>
       <ul class="tl">
-        <li><div class="t">6:30〜</div><div class="what">とうふの比嘉でゆし豆腐</div><div class="note">予約不可・現金のみ・売り切れ次第終了。早めに</div><div class="tags"><span class="tag free">予約不要</span><a class="map" href="https://www.google.com/maps/search/?api=1&query=%E3%81%A8%E3%81%86%E3%81%B5%E3%81%AE%E6%AF%94%E5%98%89" target="_blank" rel="noopener">地図</a></div></li>
+        <li><div class="t">6:30〜</div><div class="what">とうふの比嘉でゆし豆腐</div><div class="note">予約不可・現金のみ・売り切れ次第終了。早めに</div><div class="tags"><span class="tag free">予約不要</span><a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%81%A8%E3%81%86%E3%81%B5%E3%81%AE%E6%AF%94%E5%98%89" target="_blank" rel="noopener">地図</a></div></li>
         <li><div class="t">朝</div><div class="what">ホテルをチェックアウト</div><div class="note">スーツケースは車に積んでおく</div></li>
-        <li><div class="t">午前</div><div class="what">シュノーケル</div><div class="note">マンタとウミガメ狙い。幻の島に寄らない、12時ごろまでに終わるプランで</div><div class="tags"><span class="tag todo">まだ予約していない</span></div></li>
-        <li><div class="t">14:00ごろ</div><div class="what">給油してレンタカーを返す</div><div class="note">バジェット石垣空港店。返却期限は14:30。手続きと空港までの送迎で20〜30分みておく</div><div class="tags"><span class="tag ok">予約済み</span></div></li>
-        <li><div class="t">14:35</div><div class="what">空港から離島ターミナルへバス</div><div class="note">カリー観光の直通バス。15:05ごろ着</div>
-          <div class="alt"><b>15:05発</b>のバスでも16:00の船に間に合います（15:35ごろ着）。</div></li>
-        <li><div class="t">15:10</div><div class="what">翌朝の朝ごはんを買う</div><div class="note">離島ターミナルの売店や周辺のお店で</div></li>
-        <li><div class="t">16:00</div><div class="what">八重山観光フェリーで小浜島へ</div><div class="note">石垣港 16:00発 → 小浜港 16:30ごろ着。乗船券は時間指定なしで、どの便にも乗れる</div>
-          <div class="alt"><b>17:00便</b>でも大丈夫です（バスは15:35か16:05発）。小浜島着は17:30ごろで、ちょうど夕暮れどき。<br>シュノーケルが早く終われば<b>14:00便</b>も（13:05発のバスに乗れる時間に車を返す）。</div></li>
-        <li><div class="t">16:45ごろ</div><div class="what">リゾナーレ小浜島にチェックイン</div><div class="note">港から無料送迎バスで約5分。フェリーの到着にあわせて迎えに来てくれる</div><div class="tags"><span class="tag ok">予約済み</span></div></li>
+        <li><div class="t">A</div><div class="what">24日が持ちそうなら：石垣島でゆっくり</div><div class="note">ドライブやカフェで午前を過ごして、夕方の船で小浜島へ。</div>
+          <div class="alt">ドライブ候補：<b>平久保崎</b>（島の最北端の灯台）、<b>ばんやファーム</b>（不定休）。市街地のカフェでのんびりでもOK。<br>14:00ごろ給油して車を返す（期限14:30）→ 14:35のバスで離島ターミナルへ（15:05発でも間に合う）→ 15:10に翌朝ごはんを買う → <b>16:00の船</b>で小浜島へ（17:00便でも大丈夫）。</div>
+          <div class="tags"><a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%B9%B3%E4%B9%85%E4%BF%9D%E5%B4%8E%E7%81%AF%E5%8F%B0" target="_blank" rel="noopener">平久保崎</a><a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E3%81%B0%E3%82%93%E3%82%84%E3%83%95%E3%82%A1%E3%83%BC%E3%83%A0%20%E7%9F%B3%E5%9E%A3" target="_blank" rel="noopener">ばんやファーム</a></div></li>
+        <li><div class="t">B</div><div class="what">24日が雨っぽいなら：早めに小浜島へ</div><div class="note">晴れ間のある23日のうちに、自転車で島を一周する。</div>
+          <div class="alt">12:30ごろ給油して車を返す → 13:05のバスで離島ターミナルへ → 昼ごはんを買う → <b>14:00の船</b>で小浜島へ（14:30ごろ着）。これより早い便があれば、そちらでもOK。<br>荷物を預けて自転車を借り（15:00にチェックイン）、島を一周。<b>日没は17:50ごろ</b>なので、暗くなる前にホテルへ戻る。時間が足りなければ、細崎や展望台を飛ばす。</div></li>
+        <li><div class="t">夕方</div><div class="what">リゾナーレ小浜島にチェックイン</div><div class="note">港から無料送迎バスで約5分。フェリーの到着にあわせて迎えに来てくれる（Bは15:00以降）</div><div class="tags"><span class="tag ok">予約済み</span></div></li>
         <li><div class="t">18:55</div><div class="what">リゾナーレの玄関前でお迎えを待つ</div><div class="note">「ゆうな」の方が迎えに来てくれる</div></li>
-        <li><div class="t">19:00</div><div class="what">島ダイニングゆうなで夕ごはん</div><div class="note">小浜島のお店。20:50ごろまでに食べ終えたら、宿まで車で送ってくれる</div><div class="tags"><span class="tag ok">予約済み</span><a class="map" href="https://www.google.com/maps/search/?api=1&query=%E5%B3%B6%E3%83%80%E3%82%A4%E3%83%8B%E3%83%B3%E3%82%B0%E3%82%86%E3%81%86%E3%81%AA%20%E5%B0%8F%E6%B5%9C%E5%B3%B6" target="_blank" rel="noopener">地図</a></div></li>
+        <li><div class="t">19:00</div><div class="what">島ダイニングゆうなで夕ごはん</div><div class="note">小浜島のお店。20:50ごろまでに食べ終えたら、宿まで車で送ってくれる</div><div class="tags"><span class="tag ok">予約済み</span><a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=%E5%B3%B6%E3%83%80%E3%82%A4%E3%83%8B%E3%83%B3%E3%82%B0%E3%82%86%E3%81%86%E3%81%AA%20%E5%B0%8F%E6%B5%9C%E5%B3%B6" target="_blank" rel="noopener">地図</a></div></li>
       </ul>
     </article>
 
@@ -259,13 +269,14 @@
       <div class="day-head">
         <svg class="deco" aria-hidden="true"><use href="#i-bike"/></svg>
         <div class="num">DAY 4</div>
-        <h3>自転車で小浜島めぐり</h3>
+        <h3>自転車か、のんびりか</h3>
         <div class="date">11月24日（火）　小浜島</div>
       </div>
-      <p class="day-lead">泳がずに、自転車で島をのんびり一周する日。サトウキビ畑の一本道や展望台に寄り道しながら。</p>
+      <p class="day-lead">24日は雨の予報。23日にBを選んで自転車を済ませたら、この日はホテルでのんびり過ごします。</p>
+      <div class="plan"><b>Aの場合（23日は石垣島）：</b>天気がもてば、この日に自転車で島を一周。雨が降ってきたらホテルに戻って過ごす。<br><b>Bの場合：</b>ホテルでのんびり。温泉やスパ、ガジュマルツリーテラス（無料・予約不要）など。ホテルのアクティビティは、空きや天気を前日までにフロントで確認する。</div>
       <ul class="tl">
         <li><div class="t">朝</div><div class="what">前日に買った朝ごはん</div></li>
-        <li><div class="t">午前</div><div class="what">ホテルで自転車を借りる</div><div class="note">島のまわりはおよそ16km。真ん中は坂があるので、選べるなら電動アシスト付きが楽</div></li>
+        <li><div class="t">午前</div><div class="what">（Aの場合）ホテルで自転車を借りる</div><div class="note">島のまわりはおよそ16km。真ん中は坂があるので、選べるなら電動アシスト付きが楽</div></li>
         <li><div class="t">寄り道</div><div class="what">シュガーロード</div><div class="note">サトウキビ畑の間をまっすぐ延びる一本道</div><div class="tags"><a class="map" href="https://www.google.com/maps/search/?api=1&query=%E3%82%B7%E3%83%A5%E3%82%AC%E3%83%BC%E3%83%AD%E3%83%BC%E3%83%89%20%E5%B0%8F%E6%B5%9C%E5%B3%B6" target="_blank" rel="noopener">地図</a></div></li>
         <li><div class="t">寄り道</div><div class="what">大岳（うふだき）展望台</div><div class="note">島の真ん中の丘。まわりの島々を見渡せる</div><div class="tags"><a class="map" href="https://www.google.com/maps/search/?api=1&query=%E5%A4%A7%E5%B2%B3%E5%B1%95%E6%9C%9B%E5%8F%B0%20%E5%B0%8F%E6%B5%9C%E5%B3%B6" target="_blank" rel="noopener">地図</a></div></li>
         <li><div class="t">寄り道</div><div class="what">細崎（くばざき）</div><div class="note">島の西の端の小さな漁港</div><div class="tags"><a class="map" href="https://www.google.com/maps/search/?api=1&query=%E7%B4%B0%E5%B4%8E%20%E5%B0%8F%E6%B5%9C%E5%B3%B6" target="_blank" rel="noopener">地図</a></div></li>
@@ -323,7 +334,7 @@
     <h2 class="sec-title">まだやること</h2>
     <p class="sec-lead">出発までに済ませたいこと。</p>
     <ul class="todo-list">
-      <li><div class="box" aria-hidden="true"></div><div><b>シュノーケルツアーを予約する</b><span>23日（月）午前、幻の島なし、12時ごろまでに終わるプラン</span></div></li>
+      <li><div class="box" aria-hidden="true"></div><div><b>22日の夜に、24日の天気予報を見る</b><span>持ちそうなら23日はA（石垣島でゆっくり）、雨っぽければB（早めに小浜島へ）</span></div></li>
     </ul>
   </section>
 
